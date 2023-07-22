@@ -1,5 +1,5 @@
 # seed_randomly
-Header `tbx.seed_randomly.cpp14.h` provides tools for randomly seeding random number engines in the C++ Standard Library. They work with any random number engine that can be seeded using a seed sequence, including all the engines in the C++ Standard Library, and many others, as well.
+Header `tbx.seed_randomly.cpp14.h` provides tools for seeding a C++ random number engine with random seeds from `std:random_device`. It works with any engine that can be seeded with a seed sequence, including those in the C++ Standard Library.
 
 The tools use only the features of C++14, nothing later.
 
