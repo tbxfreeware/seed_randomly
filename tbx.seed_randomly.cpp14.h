@@ -1,5 +1,70 @@
 #ifndef TBX_SEED_RANDOMLY_CPP14_H
 #define TBX_SEED_RANDOMLY_CPP14_H
+//================================================================================
+// "MIT License"
+//================================================================================
+// Copyright 2023 Michael J. Mannon
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+//================================================================================
+
+//======================================================================
+// tbx.seed_randomly.cpp14.h
+// 
+// This header provides tools for randomly seeding random number 
+// engines in the C++ Standard Library.
+// 
+// They work with any random number engine that can be seeded using 
+// a seed sequence, including all the engines in the C++ Standard 
+// Library.
+// 
+// The tools use only the features of C++14, nothing later.
+//======================================================================
+// seed_randomly
+// 
+// This function takes a random number engine as argument, and seeds 
+// it with random seeds generated from std::random_device.
+// 
+// Declaration:
+//    template< typename RandomNumberEngine >
+//    void seed_randomly( RandomNumberEngine& );
+// 
+// Example:
+//    std::mt19937 mt;
+//    tbx::seed_randomly( mt );
+// 
+//======================================================================
+// class seed_seq_rd
+// 
+// This class mimics the interface of std::seed_seq, but uses 
+// std::random_device to generate seeds. 
+// 
+// Objects of this type are seed sequences that can be used as 
+// arguments to member function seed in a random number engine.
+// 
+// Example:
+//    std::mt19937 mt;
+//    tbx::seed_seq_rd s;
+//    mt.seed(s);
+// 
+//======================================================================
+
 #include <array>             // array, cbegin, cend
 #include <cstddef>           // size_t
 #include <cstdint>           // uint_least32_t
@@ -14,7 +79,7 @@ namespace tbx
         // This class mimics the interface of std::seed_seq, but 
         // uses std::random_device to generate seeds. 
         //
-        // It performs only minimal checking of its template arguments. 
+        // It performs only basic checks of its template arguments. 
         // Other than that, it complies with all requirements of a seed 
         // sequence as defined in the C++ standard.
     public:
