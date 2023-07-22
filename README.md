@@ -29,7 +29,7 @@ Function `seed_randomly` is a trivial wrapper around a `seed_seq_rd` object.
    pcg32 e;
    e.seed( s );  // seed_seq_rd object can be reused.
 
-// Implementation of seed_randomly:
+// Example: Implementation of seed_randomly:
    template< typename RandomNumberEngine >
    void seed_randomly( RandomNumberEngine& e);
    {
