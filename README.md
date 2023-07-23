@@ -1,7 +1,9 @@
 # seed_randomly
 Header `tbx.seed_randomly.cpp14.h` provides tools for seeding a C++ random number engine with random seeds from `std:random_device`. It works with any engine that can be seeded with a seed sequence, including those in the C++ Standard Library.
 
-The tools use only the features of C++14, nothing later.
+The tools here are particularly useful for seeding `std::mt19937` and `std::19937_64`. Those engines have almost 20,000 bits of state, so trying to seed them with a single seed of only 32 or 64 bits is borderline foolish. Provided that `std::random_device` is a reliable source of entropy on your system, the seeding tools here are far superior to seeding with something like `std::time(nullptr)` or `std::chrono::high_resolution_clock::now().time_since_epoch().count()`, which, respectively, have only 32 and 64 bits of entropy.
+
+This header uses only the features of C++14, nothing later.
 
 ## seed_randomly
 This function takes a random number engine as argument, and seeds it with random seeds generated from `std::random_device`.
