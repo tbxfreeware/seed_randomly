@@ -7,12 +7,12 @@ The tools use only the features of C++14, nothing later.
 This function takes a random number engine as argument, and seeds it with random seeds generated from `std::random_device`.
 ````cpp
 // Example: Seed mt19937 with random seeds from std::random_device.
-   std::mt19937 mt;
-   tbx::seed_randomly( mt );
+std::mt19937 mt;
+tbx::seed_randomly( mt );
 
 // Example: Seed pcg32, one of the PCG engines by Melissa O'Neill.
-   pcg32 e;
-   tbx::seed_randomly( e );
+pcg32 e;
+tbx::seed_randomly( e );
 ````
 
 ## class seed_seq_rd
@@ -21,19 +21,19 @@ This class mimics the interface of `std::seed_seq`, but uses `std::random_device
 Function `seed_randomly` is a trivial wrapper around a `seed_seq_rd` object.
 ````cpp
 // Example: Seed mt19937 with random seeds from std::random_device.
-   std::mt19937 mt;
-   tbx::seed_seq_rd s;
-   mt.seed( s );
+std::mt19937 mt;
+tbx::seed_seq_rd s;
+mt.seed( s );
 
 // Example: Seed pcg32, one of the PCG engines by Melissa O'Neill.
-   pcg32 e;
-   e.seed( s );  // seed_seq_rd object can be reused.
+pcg32 e;
+e.seed( s );  // seed_seq_rd object can be reused.
 
 // Example: Implementation of seed_randomly:
-   template< typename RandomNumberEngine >
-   void seed_randomly( RandomNumberEngine& e);
-   {
-        tbx::seed_seq_rd s;
-        e.seed(s);
-   }
+template< typename RandomNumberEngine >
+void seed_randomly( RandomNumberEngine& e);
+{
+    tbx::seed_seq_rd s;
+    e.seed(s);
+}
 ````
