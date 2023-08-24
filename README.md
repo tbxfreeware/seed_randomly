@@ -51,5 +51,3 @@ void seed_randomly( RandomNumberEngine& e);
 Before using this library, you should satisfy yourself that `std::random_device` is a good source of entropy on your system. Sometimes, it is not.
 
 [Microsoft Visual C++](https://learn.microsoft.com/en-us/cpp/standard-library/random-device-class?view=msvc-170), for instance, generates "non-deterministic and cryptographically secure" values, and never blocks, which is excellent. Prior to version 9.2, however, [MinGW distributions of GCC](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=85494) used `std::mt19937` with a fixed seed! Those systems generated the same sequence every time. (Newer versions purport to have fixed the problem, but I have not checked.) [Unix-like systems](https://en.wikipedia.org/wiki//dev/random) often use `/dev/random` (which can block) or `/dev/urandom`. Both have their advantages.
-
-So, do your homework.
