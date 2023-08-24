@@ -7,7 +7,7 @@ This header uses only the features of C++14, nothing later.
 ## A good choice for `mt19937`
 The tools here are particularly useful for seeding `std::mt19937` and `std::19937_64`. Those engines have 19,968 bits of state, so trying to seed them with a single seed of only 32 or 64 bits is borderline foolish. The functions in this header supply a full 19,968 bits.
 
-Using one of the two methods below is far superior to seeding with something like `std::time(nullptr)` or `std::chrono::high_resolution_clock::now().time_since_epoch().count()`, which, respectively, have only 32 and 64 bits of entropy.
+Using one of the methods described in the following two sections is far superior to seeding with something like `std::time(nullptr)` or `std::chrono::high_resolution_clock::now().time_since_epoch().count()`, which, respectively, have only 32 and 64 bits of entropy.
 
 &nbsp;
 ## seed_randomly
