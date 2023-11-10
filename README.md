@@ -26,7 +26,7 @@ tbx::seed_randomly( e );
 ## class seed_seq_rd
 This class mimics the interface of `std::seed_seq`, but uses `std::random_device` to generate seeds. Objects of this type are seed sequences that can be used as arguments to member function `seed` in a random number engine.
 
-A `seed_seq_rd` object can also be used as an argument to the constructor of a random number engine, and anywhere else that `std:seed_seq` object can be used.
+A `seed_seq_rd` object can also be used as an argument to the constructor of a random number engine, and anywhere else that a `std:seed_seq` object can be used.
 
 Function `seed_randomly` is a trivial wrapper around a `seed_seq_rd` object.
 ````cpp
