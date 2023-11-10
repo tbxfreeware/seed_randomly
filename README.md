@@ -43,10 +43,10 @@ e.seed( s );  // seed_seq_rd object can be reused.
 
 // Example: Implementation of seed_randomly:
 template< typename RandomNumberEngine >
-void seed_randomly( RandomNumberEngine& e);
+void seed_randomly( RandomNumberEngine& e );
 {
     tbx::seed_seq_rd s;
-    e.seed(s);
+    e.seed( s );
 }
 ````
 
