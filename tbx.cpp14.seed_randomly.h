@@ -109,10 +109,10 @@ namespace tbx
     public:
         using result_type = std::random_device::result_type;
     private:
-        // No matter what ctor you use, all you get is this array 
-        // with one element. Best practice, therefore, is to use the 
-        // default ctor.
-        enum : std::size_t { zero, one };
+        // No matter what constructor you use, all you get is this 
+        // array with one element. Best practice, therefore, is to 
+        // use the default constructor.
+        enum : std::size_t { one = 1u };
         std::array<result_type, one> seeds{};
     public:
         seed_seq_rd() noexcept
