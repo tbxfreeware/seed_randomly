@@ -27,14 +27,15 @@
 //======================================================================
 // tbx.cpp14.seed_randomly.h
 // 
-// This header provides tools for seeding a C++ random number engine 
-// with random seeds from `std:random_device`. It works with any engine 
-// that can be seeded with a seed sequence, including those in the 
-// C++ Standard Library.
+// Header `tbx.cpp14.seed_randomly.h` is a single-file "library" that 
+// provides tools for seeding a C++ random number engine. It works with 
+// any engine that can be seeded with a seed sequence, including all of 
+// the random number engines in the C++ Standard Library. It generates 
+// seeds using `std:random_device`.
 // 
-// The tools use only the features of C++14, nothing later.
+// This header uses only the features of C++14, nothing later.
 //======================================================================
-// seed_randomly
+// `seed_randomly`
 // 
 // This function takes a random number engine as argument, and seeds 
 // it with random seeds generated from std::random_device.
@@ -48,12 +49,16 @@
 //    tbx::seed_randomly(e);
 // 
 //======================================================================
-// class seed_seq_rd
+// class `seed_seq_rd`
 // 
 // This class mimics the interface of std::seed_seq, but uses 
 // std::random_device to generate seeds. Objects of this type are seed 
 // sequences that can be used as arguments to member function seed in 
 // a random number engine.
+// 
+// A `seed_seq_rd` object can also be used as an argument to the 
+// constructor of a random number engine, and anywhere else that a 
+// `std:seed_seq` object can be used.
 // 
 // Function `seed_randomly` is a trivial wrapper around a `seed_seq_rd` 
 // object.
