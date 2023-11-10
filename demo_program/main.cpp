@@ -25,7 +25,7 @@
 #include <cstddef>    // size_t
 #include <iostream>   // basic_ostream, cout, ostream_iterator
 #include <random>     // mt19937, mt19937_64
-#include "tbx.seed_randomly.cpp14.h"
+#include "tbx.cpp14.seed_randomly.h"
 namespace tbx
 {
     template< typename charT, typename traits >
