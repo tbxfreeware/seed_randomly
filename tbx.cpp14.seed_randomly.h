@@ -38,23 +38,23 @@
 // `seed_randomly`
 // 
 // This function takes a random number engine as argument, and seeds 
-// it with random seeds generated from std::random_device.
+// it with random seeds generated from `std::random_device`.
 // 
-// Example: Seed mt19937 with random seeds from std::random_device.
+// Example: Seed `mt19937`.
 //    std::mt19937 mt;
 //    tbx::seed_randomly(mt);
 // 
-// Example: Seed pcg32, one of the PCG engines by Melissa O'Neill.
+// Example: Seed `pcg32`, one of the PCG engines by Melissa O'Neill.
 //    pcg32 e;
 //    tbx::seed_randomly(e);
 // 
 //======================================================================
 // class `seed_seq_rd`
 // 
-// This class mimics the interface of std::seed_seq, but uses 
-// std::random_device to generate seeds. Objects of this type are seed 
-// sequences that can be used as arguments to member function seed in 
-// a random number engine.
+// This class mimics the interface of `std::seed_seq`, but uses 
+// `std::random_device` to generate seeds. Objects of this type are 
+// seed sequences that can be used as arguments to member function `seed` 
+// in a random number engine.
 // 
 // A `seed_seq_rd` object can also be used as an argument to the 
 // constructor of a random number engine, and anywhere else that a 
@@ -63,18 +63,18 @@
 // Function `seed_randomly` is a trivial wrapper around a `seed_seq_rd` 
 // object.
 // 
-// Example: Seed mt19937 with random seeds from std::random_device.
+// Example: Seed `mt19937` with random seeds from `std::random_device`.
 //    tbx::seed_seq_rd s;
 //    std::mt19937 mt{ s };
 // 
-// Example: Seed mt19937_64 with random seeds from std::random_device.
+// Example: Seed `mt19937_64` with random seeds from `std::random_device`.
 //    tbx::seed_seq_rd s;
 //    std::mt19937_64 mt64;
 //    mt64.seed(s);
 // 
-// Example: Seed pcg32, one of the PCG engines by Melissa O'Neill.
+// Example: Seed `pcg32`, one of the PCG engines by Melissa O'Neill.
 //    pcg32 e;
-//    e.seed(s);  // seed_seq_rd object can be reused.
+//    e.seed(s);  // `seed_seq_rd` object can be reused.
 // 
 //======================================================================
 // Check `random_device`
