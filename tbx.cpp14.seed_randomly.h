@@ -42,7 +42,7 @@
 // 
 // Example: Seed mt19937 with random seeds from std::random_device.
 //    std::mt19937 mt;
-//    tbx::seed_randomly( mt );
+//    tbx::seed_randomly(mt);
 // 
 // Example: Seed pcg32, one of the PCG engines by Melissa O'Neill.
 //    pcg32 e;
